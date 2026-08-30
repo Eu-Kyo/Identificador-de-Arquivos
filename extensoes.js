@@ -1,4 +1,4 @@
-export const APP_SUGERIDOS = {
+export const APP_SUGERIDO = {
     pdf: "Adobe Acrobat Reader / navegador",
     doc: "Microsoft Word",
     docx: "Microsoft Word",
