@@ -14,6 +14,7 @@ export const APP_SUGERIDO = {
     mp3: "Player de áudio (Windows Media Player, VLC)",
     wav: "Player de áudio",
     mp4: "Player de vídeo (VLC, Windows Media Player)",
+    mkv: "Player de vídeo (VLC, Windows Media Player",
     txt: "Bloco de notas",
     zip: "Compactador de arquivos (WinRAR, 7-Zip)",
     rar: "WinRAR / 7-Zip",
@@ -21,4 +22,9 @@ export const APP_SUGERIDO = {
     js: "Editor de código (VS Code)",
     json: "Editor de código / Navegador",
     csv: "Excel / Google Sheets",
+    appimage: "Executável Linux",
+    deb: "Executável Linux",
+    flatpakref: "Executável Linux (Flatpak)",
+    ttf: "Fontes",
+
 }

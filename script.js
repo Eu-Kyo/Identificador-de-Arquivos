@@ -1,15 +1,18 @@
-import { APP_SUGERIDO } from "./extensoes"; // caso for adicionar outras extensões/aplicativos, só modificar o arquivo.
+import { APP_SUGERIDO } from "./extensoes.js"; // caso for adicionar outras extensões/aplicativos, só modificar o arquivo.
 
 const inputArquivo = document.getElementById("fileInput");
 const botaoEnviar = document.getElementById("botaoEnviar");
-const resultados = document.getElementById("resultados");
+const areaResultados = document.getElementById("resultados");
 
-botaoEnviar.addEventListener("click", () => inputArquivo.click());
+botaoEnviar.addEventListener("click", () => {
+    inputArquivo.click();
+})
+
 inputArquivo.addEventListener("change", (evento) => {
     const arquivos = evento.target.files;
     if(!arquivos || arquivos.length === 0) return;
 
-    resultados.innerHTML = "";
+    areaResultados.innerHTML = "";
 
     Array.from(arquivos).forEach(processsarArquivo);
 });
@@ -41,14 +44,14 @@ function mostrarResultados(dados){
     const card = document.createElement("div");
     card.className = "arquivo-card";
     card.innerHTML = `
-    <h3>${dados.nome}</h3>
-    <ul>
-      <li><strong>Tamanho:</strong> ${dados.tamanho}</li>
-      <li><strong>Tipo MIME:</strong> ${dados.tipoMime}</li>
-      <li><strong>Extensão:</strong> .${dados.extensao}</li>
-      <li><strong>Última modificação:</strong> ${dados.ultModif}</li>
-      <li><strong>Abrir com:</strong> ${dados.appSugerido}</li>
-    </ul>
+        <h3>${dados.nome}</h3>
+        <ul>
+            <li><strong>Tamanho:</strong> ${dados.tamanho}</li>
+            <li><strong>Tipo MIME:</strong> ${dados.tipoMime}</li>
+            <li><strong>Extensão:</strong> .${dados.extensao}</li>
+            <li><strong>Última modificação:</strong> ${dados.ultModif}</li>
+            <li><strong>Abrir com:</strong> ${dados.appSugerido}</li>
+        </ul>
     `;
-  resultados.appendChild(card);
+  areaResultados.appendChild(card);
 }
